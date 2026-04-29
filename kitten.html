@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 24th Birthday Hiba Lilia 🐱💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 30%, #f8bbd0 60%, #f5d0d6 100%);
+            font-family: 'Arial Rounded MT Bold', 'Comic Sans MS', cursive;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        /* Floating Particles */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes float-idle {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes heart-drift {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-6px) scale(1.1);
+            }
+        }
+
+        /* LEFT SECTION: CAKE */
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            z-index: 10;
+        }
+
+        .main-text {
+            font-size: 28px;
+            color: #ff1493;
+            font-weight: bold;
+            text-align: center;
+            animation: text-appear 1s ease-out;
+        }
+
+        @keyframes text-appear {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cake Container */
+        .cake-container {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .cake-plate {
+            width: 280px;
+            height: 25px;
+            background: linear-gradient(135deg, #f5deb3 0%, #ffe4b5 100%);
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+            z-index: 5;
+        }
+
+        /* Cake Layers */
+        .cake-layer {
+            position: absolute;
+            bottom: 25px;
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(-500px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 3px solid #ff69b4;
+        }
+
+        .layer-1 {
+            width: 240px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffb6d9 0%, #ffc9e3 100%);
+        }
+
+        .layer-2 {
+            width: 160px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffb6d9 0%, #ffc9e3 100%);
+            bottom: calc(25px + 70px);
+        }
+
+        .layer-3 {
+            width: 100px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffb6d9 0%, #ffc9e3 100%);
+            bottom: calc(25px + 70px + 60px);
+        }
+
+        @keyframes drop-layer {
+            from {
+                opacity: 0;
+                transform: translateY(-500px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cake-layer.drop {
+            animation: drop-layer 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Candle */
+        .candle-holder {
+            position: absolute;
+            bottom: calc(25px + 70px + 60px + 50px + 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            opacity: 0;
+        }
+
+        .candle {
+            width: 12px;
+            height: 45px;
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffc0cb 100%);
+            border-radius: 5px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .flame {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 18px solid #ff6b35;
+            opacity: 0;
+            animation: none;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                border-bottom-color: #ff6b35;
+                opacity: 1;
+            }
+            50% {
+                border-bottom-color: #ff8c42;
+                opacity: 0.9;
+            }
+        }
+
+        .flame.burning {
+            animation: flicker 0.3s ease-in-out infinite;
+            opacity: 1;
+        }
+
+        @keyframes blow-flicker {
+            0% {
+                transform: translateX(-50%) scaleY(1);
+                border-bottom-color: #ff6b35;
+            }
+            25% {
+                transform: translateX(-50%) scaleY(1.3);
+                border-bottom-color: #ffa500;
+            }
+            50% {
+                transform: translateX(-50%) scaleY(0.9);
+                border-bottom-color: #ff8c42;
+            }
+            100% {
+                transform: translateX(-50%) scaleY(1);
+                border-bottom-color: #ff6b35;
+            }
+        }
+
+        .flame.blow-effect {
+            animation: blow-flicker 0.5s ease-in-out;
+        }
+
+        @keyframes flame-out {
+            to {
+                border-bottom-color: transparent;
+                opacity: 0;
+            }
+        }
+
+        .flame.extinguished {
+            animation: flame-out 0.5s ease-out forwards !important;
+        }
+
+        @keyframes candle-drop {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-400px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .candle-holder.drop {
+            animation: candle-drop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 15;
+            animation: button-appear 1.5s ease-out;
+        }
+
+        @keyframes button-appear {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 35px rgba(255, 20, 147, 0.6);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button.hidden {
+            display: none;
+        }
+
+        /* RIGHT SECTION: KITTEN */
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .kitten-container {
+            position: relative;
+            width: 280px;
+            height: 320px;
+            animation: kitten-appear 1.5s ease-out;
+        }
+
+        @keyframes kitten-appear {
+            from {
+                opacity: 0;
+                transform: translateX(300px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Kitten Body */
+        .kitten-body {
+            width: 180px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffdbeb 0%, #ffc9d9 100%);
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            animation: kitten-bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes kitten-bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Kitten Head */
+        .kitten-head {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #ffdbeb 0%, #ffc9d9 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ears */
+        .ear {
+            width: 45px;
+            height: 55px;
+            background: linear-gradient(135deg, #ffdbeb 0%, #ffc9d9 100%);
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 10px;
+            border: 3px solid #ff69b4;
+        }
+
+        .ear::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 25px;
+            background: #ffb6d9;
+            border-radius: 50% 50% 40% 40%;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .ear-left {
+            left: 15px;
+            transform: rotate(-25deg);
+        }
+
+        .ear-right {
+            right: 15px;
+            transform: rotate(25deg);
+        }
+
+        /* Eyes */
+        .eye {
+            width: 28px;
+            height: 38px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 45px;
+            border: 2px solid #333;
+            overflow: hidden;
+        }
+
+        .eye-left {
+            left: 30px;
+        }
+
+        .eye-right {
+            right: 30px;
+            animation: wink 4s ease-in-out infinite;
+        }
+
+        @keyframes wink {
+            0%, 75%, 100% {
+                height: 38px;
+            }
+            80%, 90% {
+                height: 8px;
+            }
+        }
+
+        .pupil {
+            width: 16px;
+            height: 16px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sparkle-eye {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            right: 4px;
+            animation: twinkle 1s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* Cheeks */
+        .cheek {
+            width: 25px;
+            height: 20px;
+            background: #ff99cc;
+            border-radius: 50%;
+            position: absolute;
+            top: 85px;
+            opacity: 0.6;
+        }
+
+        .cheek-left {
+            left: 15px;
+        }
+
+        .cheek-right {
+            right: 15px;
+        }
+
+        /* Nose */
+        .nose {
+            width: 12px;
+            height: 10px;
+            background: #ff69b4;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Mouth */
+        .mouth {
+            width: 30px;
+            height: 20px;
+            border: 3px solid #ff1493;
+            border-top: 3px solid transparent;
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            top: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: smile 2s ease-in-out infinite;
+        }
+
+        @keyframes smile {
+            0%, 100% {
+                transform: translateX(-50%) scaleY(1);
+            }
+            50% {
+                transform: translateX(-50%) scaleY(1.2);
+            }
+        }
+
+        /* Pink Bow */
+        .bow {
+            width: 50px;
+            height: 40px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .bow-left, .bow-right {
+            width: 20px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 50% 50% 50% 10%;
+            position: absolute;
+            top: 0;
+        }
+
+        .bow-left {
+            left: 0;
+            transform: rotate(-20deg);
+        }
+
+        .bow-right {
+            right: 0;
+            transform: rotate(20deg);
+            border-radius: 50% 50% 10% 50%;
+        }
+
+        .bow-center {
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Arms */
+        .arm {
+            width: 35px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffdbeb 0%, #ffc9d9 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 120px;
+            border: 2px solid #ff99cc;
+        }
+
+        .arm-left {
+            left: 30px;
+            animation: wave-left 2s ease-in-out infinite;
+        }
+
+        .arm-right {
+            right: 30px;
+            animation: wave-right 2s ease-in-out infinite;
+        }
+
+        @keyframes wave-left {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(-30deg);
+            }
+        }
+
+        @keyframes wave-right {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+        }
+
+        /* Paws */
+        .paw {
+            width: 30px;
+            height: 25px;
+            background: linear-gradient(135deg, #ffdbeb 0%, #ffc9d9 100%);
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid #ff99cc;
+        }
+
+        .paw-left {
+            bottom: 20px;
+            left: 40px;
+        }
+
+        .paw-right {
+            bottom: 20px;
+            right: 40px;
+        }
+
+        /* Items in paws */
+        .balloons {
+            position: absolute;
+            right: -70px;
+            bottom: 80px;
+            display: flex;
+            gap: 15px;
+            z-index: 5;
+            animation: balloons-float 3s ease-in-out infinite;
+        }
+
+        @keyframes balloons-float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .balloon {
+            width: 35px;
+            height: 45px;
+            border-radius: 50% 50% 50% 0;
+            position: relative;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            width: 2px;
+            height: 25px;
+            background: #ff99cc;
+            transform: translateX(-50%);
+        }
+
+        .balloon-pink {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        }
+
+        .balloon-purple {
+            background: linear-gradient(135deg, #d968d6 0%, #c956c9 100%);
+        }
+
+        .balloon-white {
+            background: linear-gradient(135deg, #ffffff 0%, #ffe4e1 100%);
+            border: 2px solid #ffb6d9;
+        }
+
+        /* Confetti in left paw */
+        .confetti-ribbons {
+            position: absolute;
+            left: -70px;
+            bottom: 80px;
+            width: 60px;
+            height: 50px;
+            z-index: 5;
+        }
+
+        .ribbon {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            animation: ribbon-wave 2s ease-in-out infinite;
+        }
+
+        .ribbon-1 {
+            background: #ff69b4;
+            left: 5px;
+            animation-delay: 0s;
+        }
+
+        .ribbon-2 {
+            background: #ffb6d9;
+            left: 20px;
+            animation-delay: 0.3s;
+        }
+
+        .ribbon-3 {
+            background: #ffc9e3;
+            left: 35px;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes ribbon-wave {
+            0%, 100% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Speech Bubble */
+        .speech-bubble {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #ff1493;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            z-index: 20;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-top-color: white;
+        }
+
+        .speech-bubble.show {
+            animation: bubble-appear 0.6s ease-out forwards;
+        }
+
+        @keyframes bubble-appear {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Blowing Face */
+        .mouth.blowing {
+            width: 18px;
+            height: 25px;
+            border: 3px solid #ff1493;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: blow-mouth 0.6s ease-out;
+        }
+
+        @keyframes blow-mouth {
+            0% {
+                width: 30px;
+                height: 20px;
+            }
+            50% {
+                width: 18px;
+                height: 28px;
+            }
+            100% {
+                width: 30px;
+                height: 20px;
+            }
+        }
+
+        .eye.blowing {
+            height: 12px;
+        }
+
+        /* Sparkles */
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                scale: 0;
+            }
+            50% {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            font-size: 28px;
+            animation: sparkle 0.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .cute-sticker {
+            position: fixed;
+            font-size: 34px;
+            animation: sticker-pop 1.2s ease-out forwards;
+            pointer-events: none;
+            z-index: 55;
+            filter: drop-shadow(0 5px 12px rgba(255, 105, 180, 0.25));
+        }
+
+        @keyframes sticker-pop {
+            0% {
+                opacity: 0;
+                transform: translateY(10px) scale(0.6) rotate(-10deg);
+            }
+            35% {
+                opacity: 1;
+                transform: translateY(0) scale(1.08) rotate(8deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-55px) scale(0.9) rotate(-6deg);
+            }
+        }
+
+        /* Letter Modal */
+        .letter-modal {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding-top: 0;
+            z-index: 200;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+        }
+
+        .end-layout {
+            position: relative;
+            width: min(980px, calc(100vw - 20px));
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 14px;
+            padding-top: 5vh;
+            pointer-events: none;
+        }
+
+        .end-top-message {
+            width: 100%;
+            padding: 22px 22px 20px;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 154, 194, 0.95);
+            background: linear-gradient(180deg, rgba(255, 250, 252, 0.96) 0%, rgba(255, 238, 246, 0.96) 100%);
+            box-shadow: 0 16px 46px rgba(255, 105, 180, 0.22);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .end-top-message::before {
+            content: '✦ ✨ ✦  Birthday Love  ✦ ✨ ✦';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #ff1493;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(255, 182, 217, 0.65);
+            white-space: nowrap;
+        }
+
+        .end-top-message::after {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border-radius: 24px;
+            border: 2px dashed rgba(255, 105, 180, 0.25);
+            pointer-events: none;
+        }
+
+        .end-top-message .msg {
+            font-size: clamp(16px, 2vw, 24px);
+            line-height: 1.58;
+            font-weight: 900;
+            font-family: 'Trebuchet MS', 'Comic Sans MS', cursive;
+            letter-spacing: 0.4px;
+            background: linear-gradient(90deg, #ff1493 0%, #ff69b4 45%, #ff9ac2 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 12px rgba(255, 182, 217, 0.28);
+            animation: msg-glitter 3.5s linear infinite;
+            padding-top: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes msg-glitter {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        .end-photo-wrap {
+            width: 170px;
+            margin-top: 6px;
+            animation: end-photo-float 4.2s ease-in-out infinite;
+        }
+
+        @keyframes end-photo-float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.03);
+            }
+        }
+
+        .end-photo {
+            width: 170px;
+            height: 220px;
+            border-radius: 20px;
+            padding: 8px;
+            border: 3px solid #ff9ac2;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 244, 249, 0.92) 100%);
+            box-shadow: 0 14px 34px rgba(255, 105, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .end-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            animation: photo-pulse-center 2.6s ease-in-out infinite;
+        }
+
+        .end-photo-hearts {
+            position: absolute;
+            inset: -12px;
+            pointer-events: none;
+        }
+
+        .end-photo-hearts span {
+            position: absolute;
+            font-size: 18px;
+            color: #ff4fa4;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.75);
+            animation: heart-drift 2.2s ease-in-out infinite;
+        }
+
+        .end-photo-hearts .h1 { top: 4px; left: -2px; }
+        .end-photo-hearts .h2 { top: 0; right: 4px; animation-delay: 0.4s; }
+        .end-photo-hearts .h3 { bottom: 6px; left: 2px; animation-delay: 0.8s; }
+        .end-photo-hearts .h4 { bottom: 2px; right: 0; animation-delay: 1.2s; }
+
+        .letter-modal.show {
+            display: flex;
+            animation: fade-in 0.5s ease-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .letter {
+            width: min(90vw, 430px);
+            min-height: 380px;
+            background: linear-gradient(180deg, #fff8fb 0%, #ffeef6 100%);
+            border: 4px solid #ff9ac2;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.24);
+            position: relative;
+            overflow: hidden;
+            animation: letter-appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            z-index: 5;
+            margin-top: 8px;
+        }
+
+        @keyframes letter-appear {
+            from {
+                opacity: 0;
+                transform: scale(0) rotateY(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 42%;
+            background: linear-gradient(135deg, #ffb6d9 0%, #ffc9e3 100%);
+            animation: letter-open 0.8s ease-out 0.3s forwards;
+            transform-origin: top;
+            transform: rotateX(0deg);
+        }
+
+        @keyframes letter-open {
+            to {
+                transform: rotateX(-170deg);
+            }
+        }
+
+        .letter-content {
+            padding: 70px 26px 24px;
+            height: 100%;
+            text-align: center;
+            font-size: 18px;
+            color: #d63d7e;
+            font-weight: bold;
+            line-height: 1.75;
+            overflow-y: auto;
+            animation: content-appear 0.8s ease-out 0.8s forwards;
+            opacity: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-card {
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 50px);
+            margin-left: -82px;
+            width: 164px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 3px solid #ff9ac2;
+            border-radius: 22px;
+            box-shadow: 0 14px 30px rgba(255, 105, 180, 0.2);
+            text-align: center;
+            transform-origin: center;
+            opacity: 0;
+            transform: translateX(-50%) scale(0.45) rotate(-4deg);
+            z-index: 8;
+        }
+
+        .photo-card.reveal {
+            animation: photo-reveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .photo-card::after {
+            content: '🎀 💖 🎀';
+            position: absolute;
+            left: 50%;
+            bottom: -26px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #ff1493;
+            text-shadow: 0 0 8px rgba(255, 182, 217, 0.6);
+            white-space: nowrap;
+        }
+
+        @keyframes photo-reveal {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.35) rotate(-8deg);
+            }
+            70% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.06) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1) rotate(0deg);
+            }
+        }
+
+        .photo-window {
+            width: 100%;
+            height: 145px;
+            border-radius: 16px;
+            background: linear-gradient(180deg, #ffe2ef 0%, #ffc7dd 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6px;
+        }
+
+        .photo-window::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border-radius: 12px;
+            border: 2px dashed rgba(255, 255, 255, 0.78);
+            z-index: 2;
+        }
+
+        .photo-image {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 12px;
+            display: block;
+            image-rendering: auto;
+            animation: photo-pulse 2.2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes photo-pulse {
+            0%, 100% {
+                transform: scale(0.98);
+            }
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
+        .photo-hearts {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            font-size: 18px;
+            animation: hearts-float 1.6s ease-in-out infinite;
+        }
+
+        @keyframes hearts-float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-4px) scale(1.08);
+            }
+        }
+
+        .photo-caption {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #ff1493;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .letter-sparkle-left,
+        .letter-sparkle-right {
+            position: absolute;
+            top: 14px;
+            font-size: 24px;
+            z-index: 6;
+            animation: hearts-float 1.6s ease-in-out infinite;
+        }
+
+        .letter-sparkle-left {
+            left: 14px;
+        }
+
+        .letter-sparkle-right {
+            right: 14px;
+        }
+
+        .letter-ribbon {
+            position: absolute;
+            left: 50%;
+            top: -14px;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff69b4 0%, #ffc9e3 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.25);
+            z-index: 7;
+        }
+
+        .letter-glow {
+            position: absolute;
+            inset: -18px;
+            border-radius: 36px;
+            background: radial-gradient(circle at top, rgba(255, 182, 217, 0.28), transparent 60%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .letter-title {
+            font-size: 24px;
+            color: #ff1493;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(255, 182, 217, 0.55);
+        }
+
+        .letter-stickers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 30px;
+        }
+
+        .letter-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 10px 18px;
+            background: rgba(255, 182, 217, 0.42);
+            border-radius: 999px;
+            color: #ff1493;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .kiss-bubble {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: #fff;
+            color: #ff1493;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 8px 12px;
+            border-radius: 999px;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+            transform: rotate(10deg);
+            z-index: 3;
+        }
+
+        @keyframes content-appear {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Rose decorations on letter */
+        .rose-decoration {
+            position: absolute;
+            font-size: 45px;
+            animation: rose-sway 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .rose-left {
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        .rose-right {
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes rose-sway {
+            0%, 100% {
+                transform: translateY(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50%) rotate(5deg);
+            }
+        }
+
+        .rose-right {
+            animation: rose-sway 3s ease-in-out infinite reverse;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .left-section, .right-section {
+                flex: none;
+            }
+            .end-layout {
+                width: calc(100vw - 16px);
+                min-height: 92vh;
+                padding-top: 4vh;
+            }
+            .end-top-message {
+                padding: 20px 14px 18px;
+            }
+            .end-photo-wrap {
+                width: 150px;
+            }
+            .end-photo {
+                width: 150px;
+                height: 196px;
+            }
+            .photo-card {
+                top: calc(50% + 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling Particles -->
+    <div id="particles-container"></div>
+
+    <!-- LEFT SECTION: CAKE -->
+    <div class="left-section">
+        <div class="main-text">Click the button, Hiba Lilia 💖</div>
+        
+        <div class="cake-container">
+            <div class="cake-plate"></div>
+            <div class="cake-layer layer-1" id="layer-1"></div>
+            <div class="cake-layer layer-2" id="layer-2"></div>
+            <div class="cake-layer layer-3" id="layer-3"></div>
+            
+            <div class="candle-holder" id="candle-holder">
+                <div class="candle">
+                    <div class="flame" id="flame"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button" id="start-btn" onclick="startCeremony()">🎂 Light the Candle 🎂</button>
+            <button class="button hidden" id="blow-btn" onclick="blowCandle()">Blow 💨</button>
+        </div>
+    </div>
+
+    <!-- RIGHT SECTION: KITTEN -->
+    <div class="right-section">
+        <div class="kitten-container">
+            <div class="kitten-head">
+                <!-- Bow -->
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+
+                <!-- Ears -->
+                <div class="ear ear-left"></div>
+                <div class="ear ear-right"></div>
+
+                <!-- Eyes -->
+                <div class="eye eye-left">
+                    <div class="pupil"></div>
+                    <div class="sparkle-eye"></div>
+                </div>
+                <div class="eye eye-right">
+                    <div class="pupil"></div>
+                    <div class="sparkle-eye"></div>
+                </div>
+
+                <!-- Cheeks -->
+                <div class="cheek cheek-left"></div>
+                <div class="cheek cheek-right"></div>
+
+                <!-- Nose -->
+                <div class="nose"></div>
+
+                <!-- Mouth -->
+                <div class="mouth"></div>
+            </div>
+
+            <!-- Body -->
+            <div class="kitten-body">
+                <!-- Arms -->
+                <div class="arm arm-left"></div>
+                <div class="arm arm-right"></div>
+
+                <!-- Paws -->
+                <div class="paw paw-left"></div>
+                <div class="paw paw-right"></div>
+            </div>
+
+            <!-- Balloons in right paw -->
+            <div class="balloons">
+                <div class="balloon balloon-pink"></div>
+                <div class="balloon balloon-purple"></div>
+                <div class="balloon balloon-white"></div>
+            </div>
+
+            <!-- Confetti ribbons in left paw -->
+            <div class="confetti-ribbons">
+                <div class="ribbon ribbon-1"></div>
+                <div class="ribbon ribbon-2"></div>
+                <div class="ribbon ribbon-3"></div>
+            </div>
+
+            <!-- Speech Bubble -->
+            <div class="speech-bubble" id="speech-bubble"></div>
+        </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div class="letter-modal" id="letter-modal">
+        <div class="end-layout">
+            <div class="end-top-message">
+                <div class="msg">
+                    HAPPY 24th BIRTHDAY, HIBA LILIA — Every year you get sweeter, my beautiful Lili Ousi! 💖
+                    May all your wishes come true. You are the cutest, just like Sabrina Carpenter's kisses ✨💋
+                </div>
+            </div>
+
+            <div class="end-photo-wrap">
+                <div class="end-photo">
+                    <img src="image/image.png" alt="Hiba Lilia" />
+                </div>
+                <div class="end-photo-hearts">
+                    <span class="h1">💖</span>
+                    <span class="h2">✨</span>
+                    <span class="h3">🌸</span>
+                    <span class="h4">💗</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let blowCount = 0;
+
+        // Create falling particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particles = ['🎀', '💖', '✨', '🎉', '🎊', '⭐', '🌟', '🎈', '💝', '🌸'];
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = (Math.random() * -50) + 'px';
+                particle.style.animationDuration = (4 + Math.random() * 4) + 's';
+                particle.style.animationDelay = (i * 0.2) + 's';
+                particle.style.fontSize = (14 + Math.random() * 16) + 'px';
+                container.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 10000);
+            }
+        }
+
+        // Start ceremony
+        async function startCeremony() {
+            document.getElementById('start-btn').classList.add('hidden');
+            
+            // Drop cake layers
+            await dropCakeLayers();
+            
+            // Light candle
+            const flame = document.getElementById('flame');
+            flame.classList.add('burning');
+            
+            // Show speech bubble
+            const bubble = document.getElementById('speech-bubble');
+                bubble.textContent = 'Blow the candle, Hiba Lilia! 🕯️💨';
+            bubble.classList.add('show');
+            
+            // Show blow button
+            document.getElementById('blow-btn').classList.remove('hidden');
+        }
+
+        // Drop cake layers
+        async function dropCakeLayers() {
+            const layers = ['layer-1', 'layer-2', 'layer-3'];
+            
+            for (const layerId of layers) {
+                const layer = document.getElementById(layerId);
+                layer.classList.add('drop');
+                await sleep(1200);
+            }
+            
+            // Drop candle
+            const candleHolder = document.getElementById('candle-holder');
+            candleHolder.classList.add('drop');
+        }
+
+        // Blow candle
+        async function blowCandle() {
+            blowCount++;
+            
+            const mouth = document.querySelector('.mouth');
+            const eyes = document.querySelectorAll('.eye');
+            const flame = document.getElementById('flame');
+            
+            // Blowing animation
+            mouth.classList.add('blowing');
+            eyes.forEach(eye => eye.classList.add('blowing'));
+            
+            // Flame effect
+            flame.classList.add('blow-effect');
+            
+            await sleep(600);
+            
+            mouth.classList.remove('blowing');
+            eyes.forEach(eye => eye.classList.remove('blowing'));
+            flame.classList.remove('blow-effect');
+            
+            if (blowCount >= 3) {
+                // Extinguish flame
+                flame.classList.add('extinguished');
+                document.getElementById('blow-btn').classList.add('hidden');
+                
+                await sleep(600);
+                createSparkles();
+                
+                await sleep(1000);
+                showBirthdayLetter();
+            }
+        }
+
+        // Create sparkles
+        function createSparkles() {
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'cute-sticker';
+                sparkle.textContent = ['👧💋', '💖', '🎀', '💕', '💅', '🌸'][Math.floor(Math.random() * 6)];
+                sparkle.style.left = (35 + Math.random() * 30) + '%';
+                sparkle.style.top = (28 + Math.random() * 24) + '%';
+                sparkle.style.animationDelay = (i * 0.05) + 's';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1200);
+            }
+        }
+
+        // Show birthday letter
+        function showBirthdayLetter() {
+            const modal = document.getElementById('letter-modal');
+            modal.classList.add('show');
+            
+            // Kitten blows kiss
+            setTimeout(() => {
+                const bubble = document.getElementById('speech-bubble');
+                bubble.textContent = '*blows kiss* 😘';
+            }, 1500);
+        }
+
+        // Utility
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            createParticles();
+            
+            // Continuous particles
+            setInterval(createParticles, 4000);
+        });
+
+        // Close letter on click
+        document.getElementById('letter-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
